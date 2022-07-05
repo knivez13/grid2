@@ -13,9 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
+Route::get('/', [App\Http\Controllers\WelcomeController::class, 'welcome'])->name('welcome');
+
 
 Auth::routes(['reset' => false, 'logout' => false, 'confirm' => false, 'register' => false]);
 Route::post('logout', [App\Http\Controllers\UserController::class, 'logout'])->name('logout');
