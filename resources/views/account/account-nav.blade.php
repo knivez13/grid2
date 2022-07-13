@@ -2,7 +2,7 @@
     <!-- Account nav-->
     <div class="card card-body border-0 shadow-sm pb-1 me-lg-1">
         <div class="d-flex d-md-block d-lg-flex align-items-start pt-lg-2 mb-4">
-            <img class="rounded-circle" src="/upload/avatar/{{ Auth::user()->picture ? Auth::user()->picture :'avatar.png' }}" width="48" alt="Annette Black" />
+            <img class="rounded-circle" src="/upload/avatar/{{ Auth::user()->picture ? Auth::user()->picture :'avatar.png' }}" width="48" alt="{{ Auth::user()->name }}" />
             <div class="pt-md-2 pt-lg-0 ps-3 ps-md-0 ps-lg-3">
                 <h2 class="fs-lg mb-0">{{ Auth::user()->name }}</h2>
                 <span class="star-rating"><i class="star-rating-icon fi-star-filled active"></i>

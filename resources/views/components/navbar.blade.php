@@ -1,18 +1,16 @@
 <div class="collapse navbar-collapse order-lg-2" id="navbarNav">
-    <ul class="navbar-nav navbar-nav-scroll" style="max-height: 35rem">
+    <ul class="navbar-nav navbar-nav-scroll mx-auto" style="max-height: 35rem">
         <li class="nav-item">
-            <a class="nav-link {{(strpos(Route::currentRouteName(), 'home') === 0) ? 'active' : ''}}" href="{{ route('welcome') }}" role="button">Home</a>
+            <a class="nav-link {{(strpos(Route::currentRouteName(), 'welcome') === 0) ? 'active' : ''}}" href="{{ route('welcome') }}" role="button">Home</a>
         </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Catalog</a>
-            <ul class="dropdown-menu">
-                <li>
-                    <a class="dropdown-item" href="#">Property for Rent</a>
-                </li>
-                <li>
-                    <a class="dropdown-item" href="#">Property for Sale</a>
-                </li>
-            </ul>
+        <li class="nav-item">
+            <a class="nav-link {{(strpos(Route::currentRouteName(), 'catalog') === 0) ? 'active' : ''}}" href="{{ route('catalog') }}" role="button">Catalog</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link {{(strpos(Route::currentRouteName(), 'aboutus') === 0) ? 'active' : ''}}" href="{{ route('aboutus') }}" role="button">About Us</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link {{(strpos(Route::currentRouteName(), 'contactus') === 0) ? 'active' : ''}}" href="{{ route('contactus') }}" role="button">Contact Us</a>
         </li>
         @guest
         @else
@@ -48,7 +46,7 @@
                 </li>
             </ul>
         </li>
-        <li class="nav-item dropdown">
+        <!-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Location</a>
             <ul class="dropdown-menu">
                 <li>
@@ -61,7 +59,7 @@
                     <a class="dropdown-item {{(strpos(Route::currentRouteName(), 'city.index') === 0) ? 'active' : ''}}" href="{{ route('city.index') }}">City</a>
                 </li>
             </ul>
-        </li>
+        </li> -->
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">User Management</a>
             <ul class="dropdown-menu">

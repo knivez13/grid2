@@ -139,13 +139,12 @@
 @include('components.welcome.recentlyadded')
 @endif
 <!-- Cities (carousel)-->
-<section class="container mb-5 pb-2">
+<!-- <section class="container mb-5 pb-2">
     <div class="d-flex align-items-center justify-content-between mb-3">
         <h2 class="h3 mb-0">Search property by city</h2><a class="btn btn-link fw-normal ms-md-3 pb-0" href="real-estate-catalog-rent.html">View all<i class="fi-arrow-long-right ms-2"></i></a>
     </div>
     <div class="tns-carousel-wrapper tns-controls-outside-xxl tns-nav-outside tns-nav-outside-flush mx-n2">
         <div class="tns-carousel-inner row gx-4 mx-0 py-md-4 py-3" data-carousel-options="{&quot;items&quot;: 4, &quot;responsive&quot;: {&quot;0&quot;:{&quot;items&quot;:1},&quot;500&quot;:{&quot;items&quot;:2},&quot;768&quot;:{&quot;items&quot;:3},&quot;992&quot;:{&quot;items&quot;:4}}}">
-            <!-- Item-->
             <div class="col"><a class="card shadow-sm card-hover border-0" href="real-estate-catalog-sale.html">
                     <div class="card-img-top card-img-hover"><span class="img-overlay opacity-65"></span><img src="img/real-estate/city/new-york.jpg" alt="New York">
                         <div class="content-overlay start-0 top-0 d-flex align-items-center justify-content-center w-100 h-100 p-3">
@@ -173,7 +172,6 @@
                         <h3 class="mb-0 fs-base text-nav">New York</h3>
                     </div>
                 </a></div>
-            <!-- Item-->
             <div class="col"><a class="card shadow-sm card-hover border-0" href="real-estate-catalog-rent.html">
                     <div class="card-img-top card-img-hover"><span class="img-overlay opacity-65"></span><img src="img/real-estate/city/chicago.jpg" alt="Chicago">
                         <div class="content-overlay start-0 top-0 d-flex align-items-center justify-content-center w-100 h-100 p-3">
@@ -201,7 +199,6 @@
                         <h3 class="mb-0 fs-base text-nav">Chicago</h3>
                     </div>
                 </a></div>
-            <!-- Item-->
             <div class="col"><a class="card shadow-sm card-hover border-0" href="real-estate-catalog-sale.html">
                     <div class="card-img-top card-img-hover"><span class="img-overlay opacity-65"></span><img src="img/real-estate/city/los-angeles.jpg" alt="Los Angeles">
                         <div class="content-overlay start-0 top-0 d-flex align-items-center justify-content-center w-100 h-100 p-3">
@@ -229,7 +226,6 @@
                         <h3 class="mb-0 fs-base text-nav">Los Angeles</h3>
                     </div>
                 </a></div>
-            <!-- Item-->
             <div class="col"><a class="card shadow-sm card-hover border-0" href="real-estate-catalog-rent.html">
                     <div class="card-img-top card-img-hover"><span class="img-overlay opacity-65"></span><img src="img/real-estate/city/san-diego.jpg" alt="San Diego">
                         <div class="content-overlay start-0 top-0 d-flex align-items-center justify-content-center w-100 h-100 p-3">
@@ -257,7 +253,6 @@
                         <h3 class="mb-0 fs-base text-nav">San Diego</h3>
                     </div>
                 </a></div>
-            <!-- Item-->
             <div class="col"><a class="card shadow-sm card-hover border-0" href="real-estate-catalog-sale.html">
                     <div class="card-img-top card-img-hover"><span class="img-overlay opacity-65"></span><img src="img/real-estate/city/dallas.jpg" alt="Dallas">
                         <div class="content-overlay start-0 top-0 d-flex align-items-center justify-content-center w-100 h-100 p-3">
@@ -287,9 +282,9 @@
                 </a></div>
         </div>
     </div>
-</section>
+</section> -->
 <!-- Top agents (lnked carousel)-->
-<section class="container mb-5 pb-2 pb-lg-4">
+<!-- <section class="container mb-5 pb-2 pb-lg-4">
     <h2 class="h3 mb-4 pb-3 text-center text-md-start">Top real estate agents</h2>
     <div class="tns-carousel-wrapper">
         <div class="tns-carousel-inner" data-carousel-options="{&quot;items&quot;: 1, &quot;mode&quot;: &quot;gallery&quot;, &quot;controlsContainer&quot;: &quot;#agents-carousel-controls&quot;, &quot;nav&quot;: false}">
@@ -368,5 +363,5 @@
         <button class="mx-2" type="button"><i class="fi-chevron-left"></i></button>
         <button class="mx-2" type="button"><i class="fi-chevron-right"></i></button>
     </div>
-</section>
+</section> -->
 @endsection

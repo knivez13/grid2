@@ -10,6 +10,8 @@ class PropertyAminityMap extends Model
     use HasFactory;
     protected $guarded = [];
 
+    protected $visible = ['id', 'aminity'];
+
     public function property()
     {
         return $this->belongsTo(PropertyList::class, 'property_id');

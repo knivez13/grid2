@@ -52,10 +52,30 @@
                 <h1 class="h2 mb-2">{{$data->title}}</h1>
                 <p class="mb-2 pb-1 fs-lg">{{$data->address.' '.$data->barangay.', '.$data->municipality .', '.$data->province}}</p>
                 <ul class="d-flex mb-4 pb-lg-2 list-unstyled">
-                    <li class="me-3 pe-3 border-end"><b class="me-1">4</b><i class="fi-bed mt-n1 lead align-middle text-muted"></i></li>
-                    <li class="me-3 pe-3 border-end"><b class="me-1">2</b><i class="fi-bath mt-n1 lead align-middle text-muted"></i></li>
-                    <li class="me-3 pe-3 border-end"><b class="me-1">2</b><i class="fi-car mt-n1 lead align-middle text-muted"></i></li>
-                    <li><b>56 </b>sq.m</li>
+                    @if($data->number_of_bedroom)
+                    <li class="me-3 pe-3 border-end">
+                        <b class="me-1">{{$data->number_of_bedroom}}</b>
+                        <i class="fi-bed mt-n1 lead align-middle text-muted"></i>
+                    </li>
+                    @endif
+
+                    @if($data->number_of_bathroom)
+                    <li class="me-3 pe-3 border-end">
+                        <b class="me-1">{{$data->number_of_bathroom}}</b>
+                        <i class="fi-bath mt-n1 lead align-middle text-muted"></i>
+                    </li>
+                    @endif
+
+                    @if($data->number_of_parking)
+                    <li class="me-3 pe-3 border-end">
+                        <b class="me-1">{{$data->number_of_parking}}</b>
+                        <i class="fi-car mt-n1 lead align-middle text-muted"></i>
+                    </li>
+                    @endif
+
+
+
+                    <li><b>{{$data->lot_area}}</b>sq.m</li>
                 </ul>
             </div>
         </div>
@@ -66,17 +86,30 @@
         <!-- Rental agent-->
         <h2 class="h5">Rental agent</h2>
         <div class="card card-horizontal">
-            <div class="card-img-top bg-position-center-x" style="background-image: url(img/real-estate/agents/01.jpg);"></div>
+            <div class="card-img-top bg-position-center-x" style="background-image: url('/upload/avatar/{{ $data->agent->picture }}');"></div>
             <blockquote class="blockquote card-body p-4">
-                <p class="mb-4">Amet libero morbi venenatis ut est. Iaculis leo ultricies nunc id ante adipiscing. Vel metus odio at faucibus ac. Neque id placerat et id ut.</p>
+                <p class="mb-4">{{$data->agent->bio}}</p>
                 <footer class="d-flex justify-content-between">
                     <div class="pe-3">
-                        <h6 class="mb-0">Kristin Watson</h6>
-                        <div class="text-muted fw-normal fs-sm mb-3">Imperial Property Group Agent</div><a class="btn btn-icon btn-light-primary btn-xs shadow-sm rounded-circle me-2 mb-2" href="#"><i class="fi-facebook"></i></a><a class="btn btn-icon btn-light-primary btn-xs shadow-sm rounded-circle me-2 mb-2" href="#"><i class="fi-twitter"></i></a><a class="btn btn-icon btn-light-primary btn-xs shadow-sm rounded-circle me-2 mb-2" href="#"><i class="fi-instagram"></i></a>
+                        <h6 class="mb-0">{{$data->agent->name}}</h6>
+                        <div class="text-muted fw-normal fs-sm mb-3">{{$data->agent->company_name}}</div>
+                        <a class="btn btn-icon btn-light-primary btn-xs shadow-sm rounded-circle me-2 mb-2" href="{{$data->agent->facebook}}">
+                            <i class="fi-facebook"></i>
+                        </a>
+                        <a class="btn btn-icon btn-light-primary btn-xs shadow-sm rounded-circle me-2 mb-2" href="{{$data->agent->twitter}}">
+                            <i class="fi-twitter"></i>
+                        </a>
+                        <a class="btn btn-icon btn-light-primary btn-xs shadow-sm rounded-circle me-2 mb-2" href="{{$data->agent->instagram}}">
+                            <i class="fi-instagram"></i>
+                        </a>
+                        <a class="btn btn-icon btn-light-primary btn-xs shadow-sm rounded-circle me-2 mb-2" href="{{$data->agent->pinterest}}">
+                            <i class="fi-pinterest"></i>
+                        </a>
+                        <a class="btn btn-icon btn-light-primary btn-xs shadow-sm rounded-circle me-2 mb-2" href="{{$data->agent->linkedin}}">
+                            <i class="fi-linkedin"></i>
+                        </a>
                     </div>
-                    <div><span class="star-rating"><i class="star-rating-icon fi-star-filled active"></i><i class="star-rating-icon fi-star-filled active"></i><i class="star-rating-icon fi-star-filled active"></i><i class="star-rating-icon fi-star-filled active"></i><i class="star-rating-icon fi-star-filled active"></i></span>
-                        <div class="text-muted fs-sm mt-1">24 reviews</div>
-                    </div>
+
                 </footer>
             </blockquote>
         </div>
@@ -85,83 +118,79 @@
     <aside class="col-lg-5">
         <div class="ps-lg-5">
             <div class="d-flex align-items-center justify-content-between mb-3">
-                <div><span class="badge bg-success me-2 mb-2">Verified</span><span class="badge bg-info me-2 mb-2">New</span></div>
+                <div>
+                    <span class="badge bg-info mb-1">{{$data->listingcategory->name}}</span>
+                    <span class="badge bg-danger mb-1">{{$data->listingtype->name}}</span>
+                    <span class="badge bg-primary mb-1">{{$data->propertytype->name}}</span>
+                    <span class="badge bg-success">{{$data->deliveryunit->name}}</span>
+                </div>
                 <div class="text-nowrap">
-                    <button class="btn btn-icon btn-light-primary btn-xs shadow-sm rounded-circle ms-2 mb-2" type="button" data-bs-toggle="tooltip" title="Add to Wishlist"><i class="fi-heart"></i></button>
+                    <button class="btn btn-icon btn-light-primary btn-xs shadow-sm rounded-circle ms-2 mb-2" type="button" data-bs-toggle="tooltip" title="Add to Wishlist">
+                        <i class="fi-heart"></i>
+                    </button>
                     <div class="dropdown d-inline-block" data-bs-toggle="tooltip" title="Share">
-                        <button class="btn btn-icon btn-light-primary btn-xs shadow-sm rounded-circle ms-2 mb-2" type="button" data-bs-toggle="dropdown"><i class="fi-share"></i></button>
+                        <button class="btn btn-icon btn-light-primary btn-xs shadow-sm rounded-circle ms-2 mb-2" type="button" data-bs-toggle="dropdown">
+                            <i class="fi-share"></i>
+                        </button>
                         <div class="dropdown-menu dropdown-menu-end my-1">
-                            <button class="dropdown-item" type="button"><i class="fi-facebook fs-base opacity-75 me-2"></i>Facebook</button>
-                            <button class="dropdown-item" type="button"><i class="fi-twitter fs-base opacity-75 me-2"></i>Twitter</button>
-                            <button class="dropdown-item" type="button"><i class="fi-instagram fs-base opacity-75 me-2"></i>Instagram</button>
+                            <button class="dropdown-item" type="button">
+                                <i class="fi-facebook fs-base opacity-75 me-2"></i>Facebook
+                            </button>
+                            <button class="dropdown-item" type="button">
+                                <i class="fi-twitter fs-base opacity-75 me-2"></i>Twitter
+                            </button>
+                            <button class="dropdown-item" type="button">
+                                <i class="fi-instagram fs-base opacity-75 me-2"></i>Instagram
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
-            <h3 class="h5 mb-2">Monthly rent:</h3>
-            <h2 class="h3 mb-4 pb-2">$2,000<span class="d-inline-block ms-1 fs-base fw-normal text-body">/month</span></h2>
+            <h3 class="h5 mb-2">Price</h3>
+            <h2 class="h3 mb-4 pb-2">PHP {{$data->last_price}}<span class="d-inline-block ms-1 fs-base fw-normal text-body"></span></h2>
             <!-- Property details-->
             <div class="card border-0 bg-secondary mb-4">
                 <div class="card-body">
                     <h5 class="mb-0 pb-3">Property Details</h5>
                     <ul class="list-unstyled mt-n2 mb-0">
-                        <li class="mt-2 mb-0"><b>Type: </b>apartment</li>
-                        <li class="mt-2 mb-0"><b>Apartment area: </b>56 sq.m</li>
-                        <li class="mt-2 mb-0"><b>Built: </b>2015</li>
-                        <li class="mt-2 mb-0"><b>Bedrooms: </b>4</li>
-                        <li class="mt-2 mb-0"><b>Bathrooms: </b>2</li>
-                        <li class="mt-2 mb-0"><b>Parking places: </b>2</li>
-                        <li class="mt-2 mb-0"><b>Pets allowed: </b>cats only</li>
+                        <li class="mt-2 mb-0"><b>Price / Sqm: </b>{{$data->price_per_square}}</li>
+                        <li class="mt-2 mb-0"><b>No. of units: </b>{{$data->number_of_unit}}</li>
+                        <li class="mt-2 mb-0"><b>No. of rooms: </b>{{$data->number_of_room}}</li>
+                        <li class="mt-2 mb-0"><b>No. of bedrooms: </b>{{$data->number_of_bedroom}}</li>
+                        <li class="mt-2 mb-0"><b>No. of bathrooms: </b>{{$data->number_of_bathroom}}</li>
+                        <li class="mt-2 mb-0"><b>No. of floor: </b>{{$data->number_of_floor}}</li>
+                        <li class="mt-2 mb-0"><b>No. of kitchen: </b>{{$data->number_of_kitchen}}</li>
+                        <li class="mt-2 mb-0"><b>No. of parking: </b>{{$data->number_of_parking}}</li>
+                        <li class="mt-2 mb-0"><b>No. of maidrooms: </b>{{$data->number_of_maid_room}}</li>
+                        <li class="mt-2 mb-0"><b>Title No.: </b>{{$data->title_number}}</li>
+                        <li class="mt-2 mb-0"><b>Tax Dec. No.: </b>{{$data->tax_dec_number}}</li>
                     </ul>
                 </div>
-            </div><a class="btn btn-lg btn-primary w-100 mb-3" href="#">Book a viewing</a><a class="d-inline-block mb-4 pb-2 text-decoration-none" href="#"><i class="fi-help me-2 mt-n1 align-middle"></i>Frequently asked questions</a>
+            </div>
             <!-- Amenities-->
             <div class="card border-0 bg-secondary mb-4">
                 <div class="card-body">
                     <h5>Amenities</h5>
                     <ul class="list-unstyled row row-cols-md-2 row-cols-1 gy-2 mb-0 text-nowrap">
-                        <li class="col"><i class="fi-wifi mt-n1 me-2 fs-lg align-middle"></i>WiFi</li>
-                        <li class="col"><i class="fi-thermometer mt-n1 me-2 fs-lg align-middle"></i>Heating</li>
-                        <li class="col"><i class="fi-dish mt-n1 me-2 fs-lg align-middle"></i>Dishwasher</li>
-                        <li class="col"><i class="fi-parking mt-n1 me-2 fs-lg align-middle"></i>Parking place</li>
-                        <li class="col"><i class="fi-snowflake mt-n1 me-2 fs-lg align-middle"></i>Air conditioning</li>
-                        <li class="col"><i class="fi-iron mt-n1 me-2 fs-lg align-middle"></i>Iron</li>
-                        <li class="col"><i class="fi-tv mt-n1 me-2 fs-lg align-middle"></i>TV</li>
-                        <li class="col"><i class="fi-laundry mt-n1 me-2 fs-lg align-middle"></i>Laundry</li>
-                        <li class="col"><i class="fi-cctv mt-n1 me-2 fs-lg align-middle"></i>Security cameras</li>
-                        <li class="col"><i class="fi-no-smoke mt-n1 me-2 fs-lg align-middle"></i>No smocking</li>
+                        @foreach ($aminity as $i)
+                        <li class="col"><i class="fi-star-filled mt-n1 me-2 fs-lg align-middle"></i>{{$i->aminity->name}}</li>
+                        @endforeach
                     </ul>
-                    <div class="collapse" id="seeMoreAmenities">
-                        <ul class="list-unstyled row row-cols-md-2 row-cols-1 gy-2 pt-2 mb-0 text-nowrap">
-                            <li class="col"><i class="fi-double-bed mt-n1 me-2 fs-lg align-middle"></i>Double bed</li>
-                            <li class="col"><i class="fi-bed mt-n1 me-2 fs-lg align-middle"></i>Single bed</li>
-                        </ul>
-                    </div><a class="collapse-label collapsed d-inline-block mt-3" href="#seeMoreAmenities" data-bs-toggle="collapse" data-bs-label-collapsed="Show more" data-bs-label-expanded="Show less" role="button" aria-expanded="false" aria-controls="seeMoreAmenities"></a>
                 </div>
             </div>
             <!-- Not included in rent-->
             <div class="card border-0 bg-secondary mb-4">
                 <div class="card-body">
-                    <h5>Not included in rent</h5>
+                    <h5>Near Location</h5>
                     <ul class="list-unstyled row row-cols-md-2 row-cols-1 gy-2 mb-0 text-nowrap">
-                        <li class="col"><i class="fi-swimming-pool mt-n1 me-2 fs-lg align-middle"></i>Swimming pool</li>
-                        <li class="col"><i class="fi-cafe mt-n1 me-2 fs-lg align-middle"></i>Restaurant</li>
-                        <li class="col"><i class="fi-spa mt-n1 me-2 fs-lg align-middle"></i>Spa lounge</li>
-                        <li class="col"><i class="fi-cocktail mt-n1 me-2 fs-lg align-middle"></i>Bar</li>
+                        @foreach ($nearlocation as $i)
+                        <li class="col"><i class="fi-map-pin mt-n1 me-2 fs-lg align-middle"></i>{{$i->nearlocation->name}}</li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
-            <!-- Post meta-->
-            <ul class="d-flex mb-4 list-unstyled fs-sm">
-                <li class="me-3 pe-3 border-end">Published: <b>Dec 9, 2020</b></li>
-                <li class="me-3 pe-3 border-end">Ad number: <b>681013232</b></li>
-                <li class="me-3 pe-3">Views: <b>48</b></li>
-            </ul>
             <iframe class="responsive-iframe" width="100" height="300" id="gmap_canvas" src="https://maps.google.com/maps?q={{$data->address.'+'.$data->barangay.'+'.$data->municipality .'+'.$data->province}}&t=&z=17   &ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-
         </div>
     </aside>
 </div>
-<!-- {{$data}} -->
-
 @endsection

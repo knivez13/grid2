@@ -15,6 +15,11 @@ class PropertyList extends Model
         return $this->belongsTo(PropertyType::class, 'property_type_id');
     }
 
+    public function agent()
+    {
+        return $this->belongsTo(User::class, 'created_by');
+    }
+
     public function listingcategory()
     {
         return $this->belongsTo(ListingCategory::class, 'listing_category_id');

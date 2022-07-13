@@ -29,7 +29,7 @@
         @foreach ($list as $data)
 
         <div class="card card-hover card-horizontal border-0 shadow-sm mb-4">
-            <a class="card-img-top" href="real-estate-single-v1.html" style="background-image: url('/upload/coverphoto/{{ $data->coverphoto }}')">
+            <a class="card-img-top" href="{{ route('viewproperty', $data->title_slug) }}" style="background-image: url('/upload/coverphoto/{{ $data->coverphoto }}')">
                 <div class="position-absolute start-0 top-0 pt-3 ps-3">
                     <span class="d-table badge bg-info mb-1">{{$data->listingcategory->name}}</span>
                     <span class="d-table badge bg-danger mb-1">{{$data->listingtype->name}}</span>
@@ -44,7 +44,7 @@
                         <li>
                             <button class="dropdown-item" type="button"><i class="fi-edit opacity-60 me-2"></i>Edit</button>
                         </li>
-                        <li>
+                        <!-- <li>
                             <button class="dropdown-item" type="button"><i class="fi-flame opacity-60 me-2"></i>Promote</button>
                         </li>
                         <li>
@@ -52,15 +52,15 @@
                         </li>
                         <li>
                             <button class="dropdown-item" type="button"><i class="fi-trash opacity-60 me-2"></i>Delete</button>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
                 <h4 class="mb-1 fs-xs fw-normal text-uppercase text-primary">{{$data->status->name}}</h4>
                 <h3 class="h6 mb-2 fs-base">
-                    <a class="nav-link stretched-link" href="real-estate-single-v1.html">{{$data->title}} | {{$data->lot_area}} sq.m
+                    <a class="nav-link stretched-link" href="{{ route('viewproperty', $data->title_slug) }}">{{$data->title}} | {{$data->lot_area}} sq.m
                     </a>
                 </h3>
-                <p class="mb-2 fs-sm text-muted">{{$data->address}}</p>
+                <p class="mb-2 fs-sm text-muted">{{$data->address.' '.$data->barangay.', '.$data->municipality .', '.$data->province}}</p>
                 <div class="fw-bold">
                     <i class="fi-cash mt-n1 me-2 lead align-middle opacity-70"></i>{{$data->last_price}}
                 </div>

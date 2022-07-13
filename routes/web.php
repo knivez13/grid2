@@ -15,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [App\Http\Controllers\WelcomeController::class, 'welcome'])->name('welcome');
 
+Route::get('/about-us', [App\Http\Controllers\WelcomeController::class, 'aboutus'])->name('aboutus');
+Route::get('/contact-us', [App\Http\Controllers\WelcomeController::class, 'contactus'])->name('contactus');
+Route::get('/catalog', [App\Http\Controllers\WelcomeController::class, 'catalog'])->name('catalog');
+
 Route::get('/property-list/{title_slug}', [App\Http\Controllers\WelcomeController::class, 'viewproperty'])->name('viewproperty');
 
 Auth::routes(['reset' => false, 'logout' => false, 'confirm' => false, 'register' => false]);
