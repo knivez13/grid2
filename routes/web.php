@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [App\Http\Controllers\WelcomeController::class, 'welcome'])->name('welcome');
 
+Route::get('/property-list/{title_slug}', [App\Http\Controllers\WelcomeController::class, 'viewproperty'])->name('viewproperty');
 
 Auth::routes(['reset' => false, 'logout' => false, 'confirm' => false, 'register' => false]);
 Route::post('logout', [App\Http\Controllers\UserController::class, 'logout'])->name('logout');

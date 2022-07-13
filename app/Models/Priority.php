@@ -9,4 +9,5 @@ class Priority extends Model
 {
     use HasFactory;
     protected $guarded = [];
+    protected $visible = ['id', 'name'];
 }

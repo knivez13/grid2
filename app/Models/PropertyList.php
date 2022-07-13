@@ -44,4 +44,19 @@ class PropertyList extends Model
     {
         return $this->belongsTo(PropertyStatus::class, 'property_status_id');
     }
+
+    public function propertyaminity()
+    {
+        return $this->hasMany(PropertyAminityMap::class);
+    }
+
+    public function propertyphoto()
+    {
+        return $this->hasMany(PropertyPhoto::class);
+    }
+
+    public function propertynearlocation()
+    {
+        return $this->hasMany(PropertyNearLocationMap::class);
+    }
 }

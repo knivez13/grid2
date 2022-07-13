@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             //baisc info
             $table->string('title')->unique();
+            $table->string('title_slug');
             $table->unsignedBigInteger('listing_type_id');
             $table->unsignedBigInteger('listing_category_id');
             $table->unsignedBigInteger('property_type_id');
@@ -28,17 +29,20 @@ return new class extends Migration
             $table->string('reserve_by')->nullable();
 
             //location
-            $table->unsignedBigInteger('country_id')->nullable();
-            $table->unsignedBigInteger('state_id')->nullable();
-            $table->unsignedBigInteger('city_id')->nullable();
+            $table->string('country')->nullable();
+            $table->string('province')->nullable();
+            $table->string('municipality')->nullable();
+            $table->string('barangay')->nullable();
             $table->string('zipcode')->nullable();
             $table->string('address');
 
             //price
-            $table->decimal('asking_price')->nullable();
-            $table->decimal('last_price')->nullable();
-            $table->decimal('leasing_price')->nullable();
-
+            $table->decimal('asking_price', 18, 2)->nullable();
+            $table->decimal('last_price', 18, 2)->nullable();
+            $table->decimal('leasing_price', 18, 2)->nullable();
+            //Photo
+            $table->string('coverphoto')->nullable();
+            $table->string('house_video')->nullable();
             //Property details
             $table->decimal('price_per_square')->nullable();
             $table->integer('lot_area')->nullable();
@@ -76,9 +80,7 @@ return new class extends Migration
             $table->unsignedBigInteger('created_by')->nullable();
             $table->unsignedBigInteger('updated_by')->nullable();
 
-            $table->foreign('country_id')->references('id')->on('countries')->onDelete('cascade');
-            $table->foreign('state_id')->references('id')->on('states')->onDelete('cascade');
-            $table->foreign('city_id')->references('id')->on('cities')->onDelete('cascade');
+
             $table->foreign('property_type_id')->references('id')->on('property_types')->onDelete('cascade');
             $table->foreign('listing_category_id')->references('id')->on('listing_categories')->onDelete('cascade');
             $table->foreign('listing_type_id')->references('id')->on('listing_types')->onDelete('cascade');

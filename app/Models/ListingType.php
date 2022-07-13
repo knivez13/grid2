@@ -9,4 +9,5 @@ class ListingType extends Model
 {
     use HasFactory;
     protected $guarded = [];
+    protected $visible = ['id', 'name'];
 }

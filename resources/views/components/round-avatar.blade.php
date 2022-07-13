@@ -1,8 +1,8 @@
 <div class="dropdown d-none d-lg-block order-lg-3 my-n2 me-3">
-    <a class="d-block py-2" href="javascript:void(0)"><img class="rounded-circle" src="/upload/avatar/{{ Auth::user()->picture ? Auth::user()->picture :'avatar.png' }}" width="40" alt="Annette Black" /></a>
+    <a class="d-block py-2" href="javascript:void(0)"><img class="rounded-circle" src="/upload/avatar/{{ Auth::user()->picture ? Auth::user()->picture :'avatar.png' }}" width="40" alt="{{ Auth::user()->name }}" /></a>
     <div class="dropdown-menu dropdown-menu-end">
         <div class="d-flex align-items-start border-bottom px-3 py-1 mb-2" style="width: 16rem">
-            <img class="rounded-circle" src="/upload/avatar/{{ Auth::user()->picture ? Auth::user()->picture :'avatar.png' }}" width="48" alt="Annette Black" />
+            <img class="rounded-circle" src="/upload/avatar/{{ Auth::user()->picture ? Auth::user()->picture :'avatar.png' }}" width="48" alt="{{ Auth::user()->name }}" />
             <div class="ps-2">
                 <h6 class="fs-base mb-0">{{ Auth::user()->name }}</h6>
                 <!-- <span class="star-rating star-rating-sm">

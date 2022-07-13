@@ -9,11 +9,15 @@ use App\Models\ListingType;
 use App\Models\NearLocation;
 use App\Models\Priority;
 use App\Models\PriorityUnder;
+use App\Models\PropertyAminityMap;
 use App\Models\PropertyList;
+use App\Models\PropertyNearLocationMap;
+use App\Models\PropertyPhoto;
 use App\Models\PropertyStatus;
 use App\Models\PropertyType;
 use Illuminate\Http\Request;
 use Auth;
+use Illuminate\Support\Str;
 
 class PropertyListController extends Controller
 {
@@ -58,6 +62,8 @@ class PropertyListController extends Controller
     {
         $this->validate($request, [
             'title' => 'required|unique:property_lists,title',
+            'coverphoto' => 'required|image|mimes:jpeg,png,jpg|max:5048',
+            'house_video' => 'mimes:mpeg,ogg,mp4,webm,3gp,mov,flv,avi,wmv,ts|max:15040',
         ]);
 
         $listing = ListingCategory::where('name', $request->get('listing_category_id'))->first();
@@ -68,12 +74,21 @@ class PropertyListController extends Controller
         $status = PropertyStatus::where('name', $request->get('property_status_id'))->first();
         $propertytype = PropertyType::where('name', $request->get('property_type_id'))->first();
 
+        $request->coverphoto->store('coverphoto', 'public_uploads');
+        if ($request->house_video) {
+            $request->house_video->store('housevideos', 'public_uploads');
+        }
         $data = new PropertyList([
             'title' => $request->get('title'),
+            'title_slug' => Str::slug($request->get('title'), '-'),
             'address' => $request->get('address'),
-            'country_id' => $request->get('country_id'),
-            'state_id' => $request->get('state_id'),
-            'city_id' => $request->get('city_id'),
+
+            'country' => $request->get('country'),
+            'province' => $request->get('province'),
+            'municipality' => $request->get('municipality'),
+            'barangay' => $request->get('barangay'),
+            'zipcode' => $request->get('zipcode'),
+
             'property_type_id' => $propertytype->id,
             'listing_category_id' => $listing->id,
             'listing_type_id' => $type->id,
@@ -103,6 +118,8 @@ class PropertyListController extends Controller
             'contact_number' => $request->get('contact_number'),
             'description' => $request->get('description'),
             'company_name' => $request->get('company_name'),
+            'coverphoto' => $request->coverphoto->hashName(),
+            'house_video' => $request->house_video ? $request->house_video->hashName() : null,
             'email' => $request->get('email'),
             'created_by' => Auth::user()->id,
             'updated_by' => Auth::user()->id,
@@ -110,6 +127,43 @@ class PropertyListController extends Controller
         ]);
 
         $data->save(); // Finally, save the record.
+
+        if ($request->get('aminity')) {
+            foreach ($request->get('aminity') as $id) {
+                PropertyAminityMap::create([
+                    'property_id' => $data->id,
+                    'aminity_id' => $id,
+                ]);
+            }
+        }
+
+        if ($request->get('nearlocation')) {
+            foreach ($request->get('nearlocation') as $id) {
+                PropertyNearLocationMap::create([
+                    'property_id' => $data->id,
+                    'near_location_id' => $id,
+                ]);
+            }
+        }
+
+        if ($request->stock_image) {
+            $allowedfileExtension = ['jpeg', 'png', 'jpg'];
+
+
+
+
+            foreach ($request->stock_image as $photo) {
+                $extension = $photo->getClientOriginalExtension();
+                $check = in_array($extension, $allowedfileExtension);
+                if ($check) {
+                    $photo->store('housephoto', 'public_uploads');
+                    PropertyPhoto::create([
+                        'property_id' => $data->id,
+                        'photo' => $photo ? $photo->hashName() : null,
+                    ]);
+                }
+            }
+        }
 
         return back()->with('success', 'Created successfully');
     }

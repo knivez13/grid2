@@ -29,9 +29,12 @@
         @foreach ($list as $data)
 
         <div class="card card-hover card-horizontal border-0 shadow-sm mb-4">
-            <a class="card-img-top" href="real-estate-single-v1.html" style="background-image: url('{{ asset('img/real-estate/catalog/08.jpg')}}')">
+            <a class="card-img-top" href="real-estate-single-v1.html" style="background-image: url('/upload/coverphoto/{{ $data->coverphoto }}')">
                 <div class="position-absolute start-0 top-0 pt-3 ps-3">
-                    <!-- <span class="d-table badge bg-info">New</span> -->
+                    <span class="d-table badge bg-info mb-1">{{$data->listingcategory->name}}</span>
+                    <span class="d-table badge bg-danger mb-1">{{$data->listingtype->name}}</span>
+                    <span class="d-table badge bg-primary mb-1">{{$data->propertytype->name}}</span>
+                    <span class="d-table badge bg-success">{{$data->deliveryunit->name}}</span>
                 </div>
             </a>
             <div class="card-body position-relative pb-3">
@@ -59,18 +62,26 @@
                 </h3>
                 <p class="mb-2 fs-sm text-muted">{{$data->address}}</p>
                 <div class="fw-bold">
-                    <i class="fi-cash mt-n1 me-2 lead align-middle opacity-70"></i>$1,330
+                    <i class="fi-cash mt-n1 me-2 lead align-middle opacity-70"></i>{{$data->last_price}}
                 </div>
                 <div class="d-flex align-items-center justify-content-center justify-content-sm-start border-top pt-3 pb-2 mt-3 text-nowrap">
+                    @if($data->number_of_bedroom)
                     <span class="d-inline-block me-4 fs-sm">{{$data->number_of_bedroom}}
                         <i class="fi-bed ms-1 mt-n1 fs-lg text-muted"></i>
                     </span>
+                    @endif
+
+                    @if($data->number_of_bathroom)
                     <span class="d-inline-block me-4 fs-sm">{{$data->number_of_bathroom}}
                         <i class="fi-bath ms-1 mt-n1 fs-lg text-muted"></i>
                     </span>
+                    @endif
+
+                    @if($data->number_of_parking)
                     <span class="d-inline-block fs-sm">{{$data->number_of_parking}}
                         <i class="fi-car ms-1 mt-n1 fs-lg text-muted"></i>
                     </span>
+                    @endif
                 </div>
             </div>
         </div>

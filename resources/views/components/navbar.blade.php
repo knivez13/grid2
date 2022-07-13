@@ -75,7 +75,7 @@
         </li>
         <li class="nav-item dropdown d-lg-none">
             <a class="nav-link dropdown-toggle d-flex align-items-center" href="javascript:void(0)" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <img class="rounded-circle me-2" src="/upload/avatar/{{ Auth::user()->picture ? Auth::user()->picture :'avatar.png' }}" width="30" alt="Annette Black" />{{ Auth::user()->name }}
+                <img class="rounded-circle me-2" src="/upload/avatar/{{ Auth::user()->picture ? Auth::user()->picture :'avatar.png' }}" width="30" alt="{{ Auth::user()->name }}" />{{ Auth::user()->name }}
             </a>
             <div class="dropdown-menu">
                 <div class="ps-3">

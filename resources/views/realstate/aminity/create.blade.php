@@ -35,7 +35,7 @@
 
         <div class="mb-0 col-md-6">
             <button class="btn btn-outline-info btn-sm mb-2">Save</button>
-            <a href="{{ route('aminity.index') }}" class="btn btn-outline-danger btn-sm mb-2">Cancel</a>
+            <a href="{{ URL::previous() }}" class="btn btn-outline-danger btn-sm mb-2">Cancel</a>
         </div>
         {!! Form::close() !!}
     </div>
