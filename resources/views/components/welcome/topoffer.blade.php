@@ -27,7 +27,7 @@
                         <h4 class="mb-1 fs-xs fw-normal text-uppercase text-primary">{{$data->status->name}}</h4>
                         <h3 class="h6 mb-2 fs-base"><a class="nav-link stretched-link" href="{{ route('viewproperty', $data->title_slug) }}">{{$data->title}} | {{$data->lot_area}} sq.m</a></h3>
                         <p class="mb-2 fs-sm text-muted">{{$data->address.' '.$data->barangay.', '.$data->municipality .', '.$data->province}}</p>
-                        <div class="fw-bold"><i class="fi-cash mt-n1 me-2 lead align-middle opacity-70"></i>{{$data->last_price}}</div>
+                        <div class="fw-bold"><i class="fi-cash mt-n1 me-2 lead align-middle opacity-70"></i>{{$data->last_price}}PHP - {{ number_format((float)Helper::converClass($data->last_price), 2, '.', '') }}USD</div>
                     </div>
                     <div class="card-footer d-flex align-items-center justify-content-center mx-3 pt-3 text-nowrap">
                         @if($data->number_of_bedroom)
