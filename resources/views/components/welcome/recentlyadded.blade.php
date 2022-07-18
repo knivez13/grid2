@@ -26,7 +26,7 @@
                 <li class="nav-item"><a class="nav-link fs-sm mb-2 mb-md-0" href="#">Rooms</a></li>
                 <li class="nav-item"><a class="nav-link fs-sm mb-2 mb-md-0" href="#">Commercial</a></li>
             </ul>
-        </div><a class="btn btn-link fw-normal d-none d-lg-block p-0" href="real-estate-catalog-rent.html">View all<i class="fi-arrow-long-right ms-2"></i></a>
+        </div><a class="btn btn-link fw-normal d-none d-lg-block p-0" href="#">View all<i class="fi-arrow-long-right ms-2"></i></a>
     </div>
     <div class="row g-4">
         <div class="col-md-6">
@@ -40,12 +40,12 @@
                     </div>
                 </div>
                 <div class="card-footer content-overlay border-0 pt-0 pb-4">
-                    <div class="d-sm-flex justify-content-between align-items-end pt-5 mt-2 mt-sm-5"><a class="text-decoration-none text-light pe-2" href="real-estate-single-v1.html">
+                    <div class="d-sm-flex justify-content-between align-items-end pt-5 mt-2 mt-sm-5"><a class="text-decoration-none text-light pe-2" href="#">
                             <div class="fs-sm text-uppercase pt-2 mb-1">{{$addedtoday[0]->status->name}}</div>
                             <h3 class="h5 text-light mb-1">{{$addedtoday[0]->title}}</h3>
                             <div class="fs-sm opacity-70"><i class="fi-map-pin me-1"></i>{{$addedtoday[0]->address}}</div>
                         </a>
-                        <div class="btn-group ms-n2 ms-sm-0 mt-3"><a class="btn btn-primary px-3" href="real-estate-single-v1.html" style="height: 2.75rem;">PHP {{$addedtoday[0]->last_price}}</a>
+                        <div class="btn-group ms-n2 ms-sm-0 mt-3"><a class="btn btn-primary px-3" href="#" style="height: 2.75rem;">PHP {{$addedtoday[0]->last_price}}</a>
                             <button class="btn btn-primary btn-icon border-end-0 border-top-0 border-bottom-0 border-light fs-sm" type="button"><i class="fi-heart"></i></button>
                         </div>
                     </div>
@@ -62,12 +62,12 @@
                     <span class="badge bg-success fs-sm">{{$addedtoday[1]->deliveryunit->name}}</span>
                 </div>
                 <div class="card-footer content-overlay border-0 pt-0 pb-4">
-                    <div class="d-sm-flex justify-content-between align-items-end pt-5 mt-2 mt-sm-5"><a class="text-decoration-none text-light pe-2" href="real-estate-single-v1.html">
+                    <div class="d-sm-flex justify-content-between align-items-end pt-5 mt-2 mt-sm-5"><a class="text-decoration-none text-light pe-2" href="#">
                             <div class="fs-sm text-uppercase pt-2 mb-1">{{$addedtoday[1]->status->name}}</div>
                             <h3 class="h5 text-light mb-1">{{$addedtoday[1]->title}}</h3>
                             <div class="fs-sm opacity-70"><i class="fi-map-pin me-1"></i>{{$addedtoday[1]->address}}</div>
                         </a>
-                        <div class="btn-group ms-n2 ms-sm-0 mt-3"><a class="btn btn-primary px-3" href="real-estate-single-v1.html" style="height: 2.75rem;">PHP {{$addedtoday[1]->last_price}}</a>
+                        <div class="btn-group ms-n2 ms-sm-0 mt-3"><a class="btn btn-primary px-3" href="#" style="height: 2.75rem;">PHP {{$addedtoday[1]->last_price}}</a>
                             <button class="btn btn-primary btn-icon border-end-0 border-top-0 border-bottom-0 border-light fs-sm" type="button"><i class="fi-heart"></i></button>
                         </div>
                     </div>
@@ -82,12 +82,12 @@
                     <span class="badge bg-success fs-sm">{{$addedtoday[2]->deliveryunit->name}}</span>
                 </div>
                 <div class="card-footer content-overlay border-0 pt-0 pb-4">
-                    <div class="d-sm-flex justify-content-between align-items-end pt-5 mt-2 mt-sm-5"><a class="text-decoration-none text-light pe-2" href="real-estate-single-v1.html">
+                    <div class="d-sm-flex justify-content-between align-items-end pt-5 mt-2 mt-sm-5"><a class="text-decoration-none text-light pe-2" href="#">
                             <div class="fs-sm text-uppercase pt-2 mb-1">{{$addedtoday[2]->status->name}}</div>
                             <h3 class="h5 text-light mb-1">{{$addedtoday[2]->title}}</h3>
                             <div class="fs-sm opacity-70"><i class="fi-map-pin me-1"></i>{{$addedtoday[2]->address}}</div>
                         </a>
-                        <div class="btn-group ms-n2 ms-sm-0 mt-3"><a class="btn btn-primary px-3" href="real-estate-single-v1.html" style="height: 2.75rem;">PHP {{$addedtoday[2]->last_price}}</a>
+                        <div class="btn-group ms-n2 ms-sm-0 mt-3"><a class="btn btn-primary px-3" href="#" style="height: 2.75rem;">PHP {{$addedtoday[2]->last_price}}</a>
                             <button class="btn btn-primary btn-icon border-end-0 border-top-0 border-bottom-0 border-light fs-sm" type="button"><i class="fi-heart"></i></button>
                         </div>
                     </div>

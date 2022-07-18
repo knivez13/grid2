@@ -64,23 +64,23 @@
 <!-- Property categories-->
 <section class="container mb-5">
     <div class="row row-cols-lg-6 row-cols-sm-3 row-cols-2 g-3 g-xl-4">
-        <div class="col"><a class="icon-box card card-body h-100 border-0 shadow-sm card-hover h-100 text-center" href="real-estate-catalog-rent.html">
+        <div class="col"><a class="icon-box card card-body h-100 border-0 shadow-sm card-hover h-100 text-center" href="#">
                 <div class="icon-box-media bg-faded-primary text-primary rounded-circle mb-3 mx-auto"><i class="fi-real-estate-house"></i></div>
                 <h3 class="icon-box-title fs-base mb-0">Houses</h3>
             </a></div>
-        <div class="col"><a class="icon-box card card-body h-100 border-0 shadow-sm card-hover h-100 text-center" href="real-estate-catalog-sale.html">
+        <div class="col"><a class="icon-box card card-body h-100 border-0 shadow-sm card-hover h-100 text-center" href="#">
                 <div class="icon-box-media bg-faded-primary text-primary rounded-circle mb-3 mx-auto"><i class="fi-apartment"></i></div>
                 <h3 class="icon-box-title fs-base mb-0">Apartments</h3>
             </a></div>
-        <div class="col"><a class="icon-box card card-body h-100 border-0 shadow-sm card-hover h-100 text-center" href="real-estate-catalog-rent.html">
+        <div class="col"><a class="icon-box card card-body h-100 border-0 shadow-sm card-hover h-100 text-center" href="#">
                 <div class="icon-box-media bg-faded-primary text-primary rounded-circle mb-3 mx-auto"><i class="fi-shop"></i></div>
                 <h3 class="icon-box-title fs-base mb-0">Commercial</h3>
             </a></div>
-        <div class="col"><a class="icon-box card card-body h-100 border-0 shadow-sm card-hover h-100 text-center" href="real-estate-catalog-sale.html">
+        <div class="col"><a class="icon-box card card-body h-100 border-0 shadow-sm card-hover h-100 text-center" href="#">
                 <div class="icon-box-media bg-faded-primary text-primary rounded-circle mb-3 mx-auto"><i class="fi-rent"></i></div>
                 <h3 class="icon-box-title fs-base mb-0">Daily rental</h3>
             </a></div>
-        <div class="col"><a class="icon-box card card-body h-100 border-0 shadow-sm card-hover h-100 text-center" href="real-estate-catalog-rent.html">
+        <div class="col"><a class="icon-box card card-body h-100 border-0 shadow-sm card-hover h-100 text-center" href="#">
                 <div class="icon-box-media bg-faded-primary text-primary rounded-circle mb-3 mx-auto"><i class="fi-house-chosen"></i></div>
                 <h3 class="icon-box-title fs-base mb-0">New buildings</h3>
             </a></div>
@@ -89,7 +89,7 @@
                     <div class="icon-box-media bg-faded-primary text-primary rounded-circle mb-3 mx-auto"><i class="fi-dots-horisontal"></i></div>
                     <h3 class="icon-box-title fs-base mb-0">More</h3>
                 </a>
-                <div class="dropdown-menu dropdown-menu-end my-1"><a class="dropdown-item fw-bold" href="real-estate-catalog-sale.html"><i class="fi-single-bed fs-base opacity-60 me-2"></i>Room</a><a class="dropdown-item fw-bold" href="real-estate-catalog-rent.html"><i class="fi-computer fs-base opacity-60 me-2"></i>Office</a><a class="dropdown-item fw-bold" href="real-estate-catalog-sale.html"><i class="fi-real-estate-buy fs-base opacity-60 me-2"></i>Land</a><a class="dropdown-item fw-bold" href="real-estate-catalog-rent.html"><i class="fi-parking fs-base opacity-60 me-2"></i>Parking lot</a></div>
+                <div class="dropdown-menu dropdown-menu-end my-1"><a class="dropdown-item fw-bold" href="#"><i class="fi-single-bed fs-base opacity-60 me-2"></i>Room</a><a class="dropdown-item fw-bold" href="#"><i class="fi-computer fs-base opacity-60 me-2"></i>Office</a><a class="dropdown-item fw-bold" href="#"><i class="fi-real-estate-buy fs-base opacity-60 me-2"></i>Land</a><a class="dropdown-item fw-bold" href="#"><i class="fi-parking fs-base opacity-60 me-2"></i>Parking lot</a></div>
             </div>
         </div>
     </div>
@@ -104,7 +104,7 @@
                         <h2 class="h4 card-title">Buy a property</h2>
                         <p class="card-text fs-sm">Blandit lorem dictum in velit. Et nisi at faucibus mauris pretium enim. Risus sapien nisi aliquam egestas leo dignissim.</p>
                     </div>
-                    <div class="card-footer pt-0 border-0"><a class="btn btn-outline-primary stretched-link" href="real-estate-catalog-sale.html">Find a home</a></div>
+                    <div class="card-footer pt-0 border-0"><a class="btn btn-outline-primary stretched-link" href="#">Find a home</a></div>
                 </div>
             </div>
             <div class="col">
@@ -122,7 +122,7 @@
                         <h2 class="h4 card-title">Rent a property</h2>
                         <p class="card-text fs-sm">Sed sed aliquet sed id purus malesuada congue viverra. Habitant quis lacus, volutpat natoque ipsum iaculis cursus.</p>
                     </div>
-                    <div class="card-footer pt-0 border-0"><a class="btn btn-outline-primary stretched-link" href="real-estate-catalog-rent.html">Find a rental</a></div>
+                    <div class="card-footer pt-0 border-0"><a class="btn btn-outline-primary stretched-link" href="#">Find a rental</a></div>
                 </div>
             </div>
         </div>
@@ -141,11 +141,11 @@
 <!-- Cities (carousel)-->
 <!-- <section class="container mb-5 pb-2">
     <div class="d-flex align-items-center justify-content-between mb-3">
-        <h2 class="h3 mb-0">Search property by city</h2><a class="btn btn-link fw-normal ms-md-3 pb-0" href="real-estate-catalog-rent.html">View all<i class="fi-arrow-long-right ms-2"></i></a>
+        <h2 class="h3 mb-0">Search property by city</h2><a class="btn btn-link fw-normal ms-md-3 pb-0" href="#">View all<i class="fi-arrow-long-right ms-2"></i></a>
     </div>
     <div class="tns-carousel-wrapper tns-controls-outside-xxl tns-nav-outside tns-nav-outside-flush mx-n2">
         <div class="tns-carousel-inner row gx-4 mx-0 py-md-4 py-3" data-carousel-options="{&quot;items&quot;: 4, &quot;responsive&quot;: {&quot;0&quot;:{&quot;items&quot;:1},&quot;500&quot;:{&quot;items&quot;:2},&quot;768&quot;:{&quot;items&quot;:3},&quot;992&quot;:{&quot;items&quot;:4}}}">
-            <div class="col"><a class="card shadow-sm card-hover border-0" href="real-estate-catalog-sale.html">
+            <div class="col"><a class="card shadow-sm card-hover border-0" href="#">
                     <div class="card-img-top card-img-hover"><span class="img-overlay opacity-65"></span><img src="img/real-estate/city/new-york.jpg" alt="New York">
                         <div class="content-overlay start-0 top-0 d-flex align-items-center justify-content-center w-100 h-100 p-3">
                             <div class="w-100 p-1">
@@ -172,7 +172,7 @@
                         <h3 class="mb-0 fs-base text-nav">New York</h3>
                     </div>
                 </a></div>
-            <div class="col"><a class="card shadow-sm card-hover border-0" href="real-estate-catalog-rent.html">
+            <div class="col"><a class="card shadow-sm card-hover border-0" href="#">
                     <div class="card-img-top card-img-hover"><span class="img-overlay opacity-65"></span><img src="img/real-estate/city/chicago.jpg" alt="Chicago">
                         <div class="content-overlay start-0 top-0 d-flex align-items-center justify-content-center w-100 h-100 p-3">
                             <div class="w-100 p-1">
@@ -199,7 +199,7 @@
                         <h3 class="mb-0 fs-base text-nav">Chicago</h3>
                     </div>
                 </a></div>
-            <div class="col"><a class="card shadow-sm card-hover border-0" href="real-estate-catalog-sale.html">
+            <div class="col"><a class="card shadow-sm card-hover border-0" href="#">
                     <div class="card-img-top card-img-hover"><span class="img-overlay opacity-65"></span><img src="img/real-estate/city/los-angeles.jpg" alt="Los Angeles">
                         <div class="content-overlay start-0 top-0 d-flex align-items-center justify-content-center w-100 h-100 p-3">
                             <div class="w-100 p-1">
@@ -226,7 +226,7 @@
                         <h3 class="mb-0 fs-base text-nav">Los Angeles</h3>
                     </div>
                 </a></div>
-            <div class="col"><a class="card shadow-sm card-hover border-0" href="real-estate-catalog-rent.html">
+            <div class="col"><a class="card shadow-sm card-hover border-0" href="#">
                     <div class="card-img-top card-img-hover"><span class="img-overlay opacity-65"></span><img src="img/real-estate/city/san-diego.jpg" alt="San Diego">
                         <div class="content-overlay start-0 top-0 d-flex align-items-center justify-content-center w-100 h-100 p-3">
                             <div class="w-100 p-1">
@@ -253,7 +253,7 @@
                         <h3 class="mb-0 fs-base text-nav">San Diego</h3>
                     </div>
                 </a></div>
-            <div class="col"><a class="card shadow-sm card-hover border-0" href="real-estate-catalog-sale.html">
+            <div class="col"><a class="card shadow-sm card-hover border-0" href="#">
                     <div class="card-img-top card-img-hover"><span class="img-overlay opacity-65"></span><img src="img/real-estate/city/dallas.jpg" alt="Dallas">
                         <div class="content-overlay start-0 top-0 d-flex align-items-center justify-content-center w-100 h-100 p-3">
                             <div class="w-100 p-1">

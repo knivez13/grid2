@@ -12,8 +12,8 @@
                 </div>
                 <div class="offcanvas-header d-block border-bottom pt-0 pt-lg-4 px-lg-0">
                     <ul class="nav nav-tabs mb-0">
-                        <li class="nav-item"><a class="nav-link active" href="real-estate-catalog-rent.html"><i class="fi-rent fs-base me-2"></i>For rent</a></li>
-                        <li class="nav-item"><a class="nav-link" href="real-estate-catalog-sale.html"><i class="fi-home fs-base me-2"></i>For sale</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="#"><i class="fi-rent fs-base me-2"></i>For rent</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"><i class="fi-home fs-base me-2"></i>For sale</a></li>
                     </ul>
                 </div>
                 <div class="offcanvas-body py-lg-4">
@@ -214,7 +214,7 @@
             <!-- Breadcrumb-->
             <nav class="mb-3 pt-md-2" aria-label="Breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="real-estate-home-v1.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Property for rent</li>
                 </ol>
             </nav>

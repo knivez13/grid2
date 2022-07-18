@@ -4,7 +4,7 @@
 <div class="container mt-5 mb-md-4 pt-5">
     <nav class="mb-3 pt-md-3" aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="real-estate-home-v1.html">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
             <li class="breadcrumb-item active" aria-current="page">About</li>
         </ol>
     </nav>
@@ -15,7 +15,7 @@
         <!-- Hero content-->
         <div class="col-lg-4 col-md-5 col-sm-9 order-md-1 order-2 text-md-start text-center">
             <h1 class="mb-4">About Finder</h1>
-            <p class="mb-4 pb-3 fs-lg">We provide a complete service for the sale, purchase or rental of real estate. We have been operating more than 10 years. Search millions of apartments and houses on Finder.</p><a class="btn btn-lg btn-primary" href="real-estate-contacts.html">Contact us</a>
+            <p class="mb-4 pb-3 fs-lg">We provide a complete service for the sale, purchase or rental of real estate. We have been operating more than 10 years. Search millions of apartments and houses on Finder.</p><a class="btn btn-lg btn-primary" href="#">Contact us</a>
         </div>
         <!-- Hero carousel-->
         <div class="col-lg-7 col-md-6 offset-md-1 col-12 order-md-2 order-1">
