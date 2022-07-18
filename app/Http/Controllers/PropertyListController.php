@@ -9,6 +9,7 @@ use App\Models\ListingType;
 use App\Models\NearLocation;
 use App\Models\Priority;
 use App\Models\PriorityUnder;
+use App\Models\PropertyAdditionalFields;
 use App\Models\PropertyAminityMap;
 use App\Models\PropertyList;
 use App\Models\PropertyNearLocationMap;
@@ -148,10 +149,6 @@ class PropertyListController extends Controller
 
         if ($request->stock_image) {
             $allowedfileExtension = ['jpeg', 'png', 'jpg'];
-
-
-
-
             foreach ($request->stock_image as $photo) {
                 $extension = $photo->getClientOriginalExtension();
                 $check = in_array($extension, $allowedfileExtension);
@@ -165,6 +162,17 @@ class PropertyListController extends Controller
             }
         }
 
+        $count = count($request->addfield);
+
+        for ($i = 0; $i < $count; $i++) {
+            if ($request->addfield && $request->addvalue) {
+                PropertyAdditionalFields::create([
+                    'property_id' => $data->id,
+                    'addfield' => $request->addfield[$i],
+                    'addvalue' => $request->addvalue[$i]
+                ]);
+            }
+        }
         return back()->with('success', 'Created successfully');
     }
 

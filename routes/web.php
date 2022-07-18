@@ -30,7 +30,6 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
     Route::resource('property', App\Http\Controllers\PropertyListController::class)->except(['destroy']);
-
     Route::prefix('account')->group(function () {
         Route::get('personal-info', [App\Http\Controllers\UserController::class, 'personalInfo'])->name('personalinfo');
         Route::get('password-security', [App\Http\Controllers\UserController::class, 'passwordSecurity'])->name('passwordsecurity');
