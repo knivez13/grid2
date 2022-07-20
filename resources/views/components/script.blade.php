@@ -24,3 +24,4 @@
 <script src="{{ asset('vendor/nouislider/dist/nouislider.min.js') }}"></script>
 <script src="{{ asset('vendor/tiny-slider/dist/min/tiny-slider.js') }}"></script>
 <script src="{{ asset('js/theme.min.js') }}"></script>
+<script src="{{ asset('js/jquery.min.js') }}"></script>

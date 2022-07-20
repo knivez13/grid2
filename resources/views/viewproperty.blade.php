@@ -147,7 +147,8 @@
                 </div>
             </div>
             <h3 class="h5 mb-2">Price</h3>
-            <h2 class="h3 mb-4 pb-2">PHP {{$data->last_price}}<span class="d-inline-block ms-1 fs-base fw-normal text-body"></span></h2>
+            <h2 class="h3 mb-4 pb-2">PHP {{$data->last_price}} - USD {{ number_format((float)Helper::converClass($data->last_price), 2, '.', '') }}<span class="d-inline-block ms-1 fs-base fw-normal text-body"></span></h2>
+
             <!-- Property details-->
             <div class="card border-0 bg-secondary mb-4">
                 <div class="card-body">
@@ -186,6 +187,22 @@
                         @foreach ($nearlocation as $i)
                         <li class="col"><i class="fi-map-pin mt-n1 me-2 fs-lg align-middle"></i>{{$i->nearlocation->name}}</li>
                         @endforeach
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card border-0 bg-secondary mb-4">
+                <div class="card-body">
+                    <h5>Additional Field</h5>
+                    <ul class="list-unstyled row row-cols-md-2 row-cols-1 gy-2 mb-0 text-nowrap">
+                        <table class="table table-sm">
+                            @foreach ($addfield as $i)
+                            <tr>
+                                <th>{{$i->addfield}}:</th>
+                                <td>{{$i->addvalue}}</td>
+                            </tr>
+                            @endforeach
+                        </table>
                     </ul>
                 </div>
             </div>

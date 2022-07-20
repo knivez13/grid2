@@ -46,7 +46,6 @@ class PropertyListController extends Controller
         $type = ListingType::where('status', '1')->pluck('name', 'name')->all();
         $status = PropertyStatus::where('status', '1')->pluck('name', 'name')->all();
         $propertytype = PropertyType::where('status', '1')->pluck('name', 'name')->all();
-
         $nearlocation = NearLocation::where('status', '1')->get();
         $aminity = Aminity::where('status', '1')->get();
 
@@ -64,7 +63,7 @@ class PropertyListController extends Controller
         $this->validate($request, [
             'title' => 'required|unique:property_lists,title',
             'coverphoto' => 'required|image|mimes:jpeg,png,jpg|max:5048',
-            'house_video' => 'mimes:mpeg,ogg,mp4,webm,3gp,mov,flv,avi,wmv,ts|max:15040',
+            'house_video' => 'mimes:mpeg,mp4,3gp,mov|max:15040',
         ]);
 
         $listing = ListingCategory::where('name', $request->get('listing_category_id'))->first();
@@ -162,17 +161,20 @@ class PropertyListController extends Controller
             }
         }
 
-        $count = count($request->addfield);
-
-        for ($i = 0; $i < $count; $i++) {
-            if ($request->addfield && $request->addvalue) {
-                PropertyAdditionalFields::create([
-                    'property_id' => $data->id,
-                    'addfield' => $request->addfield[$i],
-                    'addvalue' => $request->addvalue[$i]
-                ]);
+        if ($request->addfield) {
+            for ($i = 0; $i < $count; $i++) {
+                if ($request->addfield && $request->addvalue) {
+                    PropertyAdditionalFields::create([
+                        'property_id' => $data->id,
+                        'addfield' => $request->addfield[$i],
+                        'addvalue' => $request->addvalue[$i]
+                    ]);
+                }
             }
         }
+        $count = count($request->addfield);
+
+
         return back()->with('success', 'Created successfully');
     }
 
