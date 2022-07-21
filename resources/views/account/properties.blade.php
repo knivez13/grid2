@@ -20,12 +20,14 @@
     <div class="col-lg-8 col-md-7 mb-5">
         <div class="d-flex align-items-center justify-content-between mb-3">
             <h1 class="h2 mb-0">My Properties</h1>
-            <a class="fw-bold text-decoration-none" href="#">
+            <!-- <a class="fw-bold text-decoration-none" href="#">
                 <i class="fi-trash mt-n1 me-2"></i>Delete all
-            </a>
+            </a> -->
         </div>
         <p class="pt-1 mb-4">Here you can see your property offers and edit them easily.</p>
         <!-- Item-->
+        @include('components.alert')
+
         @foreach ($list as $data)
 
         <div class="card card-hover card-horizontal border-0 shadow-sm mb-4">
@@ -42,17 +44,17 @@
                     <button class="btn btn-icon btn-light btn-xs rounded-circle shadow-sm" type="button" id="contextMenu1" data-bs-toggle="dropdown" aria-expanded="false"><i class="fi-dots-vertical"></i></button>
                     <ul class="dropdown-menu my-1" aria-labelledby="contextMenu1">
                         <li>
-                            <button class="dropdown-item" type="button"><i class="fi-edit opacity-60 me-2"></i>Edit</button>
+                            <a class="dropdown-item" href="{{ route('property.edit', $data->id) }}" type="button"><i class="fi-edit opacity-60 me-2"></i>Edit</a>
                         </li>
                         <!-- <li>
                             <button class="dropdown-item" type="button"><i class="fi-flame opacity-60 me-2"></i>Promote</button>
                         </li>
                         <li>
                             <button class="dropdown-item" type="button"><i class="fi-power opacity-60 me-2"></i>Deactivate</button>
-                        </li>
-                        <li>
-                            <button class="dropdown-item" type="button"><i class="fi-trash opacity-60 me-2"></i>Delete</button>
                         </li> -->
+                        <li>
+                            <a class="dropdown-item" href="{{ route('propertydelete', $data->id) }}"><i class="fi-trash opacity-60 me-2"></i>Delete</a>
+                        </li>
                     </ul>
                 </div>
                 <h4 class="mb-1 fs-xs fw-normal text-uppercase text-primary">{{$data->status->name}}</h4>

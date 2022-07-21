@@ -254,19 +254,22 @@
                         <p class="fs-sm mb-1">
                             Other Picture <br />
                             The maximum photo size is 5 MB. Formats: jpeg, jpg, png.<br />
-                            The maximum video size is 15 MB. Formats: mpeg, ogg, mp4, webm, 3gp, mov, flv, avi, wmv, ts.<br />
+                            <!-- The maximum video size is 15 MB. Formats: mpeg, ogg, mp4, webm, 3gp, mov, flv, avi, wmv, ts.<br /> -->
                         </p>
                     </div>
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="ap-country">Cover Photo <span class="text-danger">*</span></label>
-                    <input type="file" name="coverphoto" class="form-control form-control-sm" required>
+                    <input type="file" name="coverphoto" class="form-control form-control-sm" accept="image/*" required>
                 </div>
-                <div class="mb-3">
+                <!-- <div class="mb-3">
                     <label class="form-label" for="ap-country">House Video</label>
                     <input type="file" name="house_video" class="form-control form-control-sm">
+                </div> -->
+                <div class="mb-3">
+                    <label class="form-label" for="ap-country">Other Photo</label>
+                    {{ Form::file('stock_image[]', array('class'=>'form-control form-control-sm file','multiple'=>true,'accept'=>'image/*'));  }}
                 </div>
-                {{ Form::file('stock_image[]', array('class'=>'file','multiple'=>true,'accept'=>'image/*'));  }}
             </section>
             <!-- Contacts-->
             <section class="card card-body border-0 shadow-sm p-4 mb-4" id="contacts">

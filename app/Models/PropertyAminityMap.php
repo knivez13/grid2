@@ -10,7 +10,7 @@ class PropertyAminityMap extends Model
     use HasFactory;
     protected $guarded = [];
 
-    protected $visible = ['id', 'aminity'];
+    // protected $visible = ['id', 'aminity'];
 
     public function property()
     {

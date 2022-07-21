@@ -10,7 +10,7 @@ class PropertyNearLocationMap extends Model
     use HasFactory;
     protected $guarded = [];
 
-    protected $visible = ['id', 'nearlocation'];
+    // protected $visible = ['id', 'nearlocation'];
 
     public function property()
     {
